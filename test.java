@@ -3,4 +3,8 @@ public class test {
     
         System.out.println("Hello world");
     }
+
+    public static void chunk() {
+        
+    }
 }
