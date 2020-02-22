@@ -101,10 +101,6 @@ public class Chunk
         return this.chunkSounds.getSoundsString();
     }
 
-    public String whatDoISee() {
-
-    }
-
     public Boolean inRange(Player player1, Player player2, int range) {
         for(int i = 0; i <= range; i++) {
             if(playerIn(player2.getName())) {
@@ -112,6 +108,22 @@ public class Chunk
             }
         }
         return false;
+    }
+
+    // returns a string of items
+    public String seenItems() {
+        String ret = "";
+        for (int i = 0; i < this.items.size(); i++) {
+            ret += this.items.get(i).getItem();
+        }
+        if (ret == "") {
+            return "nothing";
+        }
+        return ret;
+    }
+
+    public String getBiomeName() {
+        return this.biome.getBiomeName();
     }
 
     public void addPlayer(Player player)

@@ -98,6 +98,30 @@ class World
         return "none";
     }
 
+    public String seenBiomes(Chunk currentLoc) {
+        String ret = "You are currently in a " + currentLoc.getBiomeName();
+
+        // switch to looking north
+        int[] lookingLocIndex = currentLoc.getAdjacentChunk("North");
+        Chunk lookingLoc = chunks[lookingLocIndex[0]][lookingLocIndex[1]];
+        ret += "To your north is a " + lookingLoc.getBiomeName() + "\n";
+
+        // switch to looking east
+        lookingLocIndex = currentLoc.getAdjacentChunk("East");
+        lookingLoc = chunks[lookingLocIndex[0]][lookingLocIndex[1]];
+        ret += "To your east is a " + lookingLoc.getBiomeName() + "\n";
+
+        // switch to looking south
+        lookingLocIndex = currentLoc.getAdjacentChunk("South");
+        lookingLoc = chunks[lookingLocIndex[0]][lookingLocIndex[1]];
+        ret += "To your south is a " + lookingLoc.getBiomeName() + "\n";
+
+        // switch to looking west
+        lookingLocIndex = currentLoc.getAdjacentChunk("West");
+        lookingLoc = chunks[lookingLocIndex[0]][lookingLocIndex[1]];
+        ret += "To your west is a " + lookingLoc.getBiomeName() + "\n";
+    }
+
 }
 
 
