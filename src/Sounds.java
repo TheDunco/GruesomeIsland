@@ -55,11 +55,11 @@ public class Sounds {
     public String getSoundsString() {
         String ret = "";
         for (int i = 0; i < this.soundsList.size(); i++) {
-            ret += "You hear a " + this.soundsList.get(i).getSource(); // you hear a (source)
-            ret += intensityTrans(soundsList.get(i).getIntensity());    // (intensity)
-            ret += " from the " + this.soundsList.get(i).getDirection(); // from the (direction)
+            ret += "You hear " + this.soundsList.get(i).getSource(); // you hear a (source)
+            ret += " " + intensityTrans(soundsList.get(i).getIntensity());    // (intensity)
+            ret += " from the " + this.soundsList.get(i).getDirection() + "."; // from the (direction)
 
-            ret += "and\n";
+            ret += "\n";
         }
         if (ret == "") {
             return "You here nothing from your location";
