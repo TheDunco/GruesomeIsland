@@ -1,11 +1,8 @@
-public class Biome
-{
-    
-    public Biome(int biomeSelection) {
-        this.biomeSelection = biomeSelection;
-    }
-    public int biomeSelection;
-    
+
+import java.lang.String;
+import java.util.*;
+
+public class Biome {
 
     public int defaultMod = 5;
 
@@ -16,31 +13,37 @@ public class Biome
 
     public int fixedMod = 2;
 
-    // Biome switching
-    public void biomeSelect() {
-        switch (biomeSelection) {
+    public Biome(int biomeSelection) {
+
+        // Biome switching
+        switch(biomeSelection) {
             case 0: // winter
                 biomeName = "Winter";
                 soundMod -= fixedMod;
                 tracksMod += fixedMod;
                 coverMod -= fixedMod;
+                break;
             case 1: // desert
                 biomeName = "Desert";
                 tracksMod += fixedMod;
                 coverMod -= fixedMod;
+                break;
             case 2: // forest
                 biomeName = "Forest";
                 soundMod -= fixedMod;
                 coverMod += fixedMod;
+                break;
             case 3:
                 biomeName = "City";
                 soundMod += fixedMod;
                 tracksMod -= fixedMod;
                 coverMod += fixedMod;
+                break;
             default:
                 biomeName = "Forest (default)";
                 soundMod -= fixedMod;
                 coverMod += fixedMod;
+                break;
         }
     }
 
@@ -56,7 +59,7 @@ public class Biome
         return coverMod;
     }
 
-    public String biomeName() {
+    public String getBiomeName() {
         return biomeName;
     }
 }

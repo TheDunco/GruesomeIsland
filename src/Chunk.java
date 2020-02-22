@@ -1,18 +1,25 @@
-import Biome;
 
-public class Chunk(Biome biome) {
-    public static Biome biome;
+public class Chunk {
+    public Biome biome;
     public int elevation;
+    public int worldSize;
 
-    // Create a worldSizexworldSize array of chunks
-    public static Chunk[][] chunks = new Chunk[worldSize][worldSize];
-        
-    private populateChunks() {
-        Random rand = new Random();
-        for (i = 0; i < worldSize; i++) {
-            for (j = 0; j < worldSize; j++ ) {
-                chunks[i][j] = new Chunk(rand.nextInt(4)); // 4 biomes so choose a random one
-            }
-        }
+
+
+    public Chunk(int biomeSelect, int elevation, int worldSize) {
+        // Create a worldSizexworldSize array of chunks
+        this.worldSize = worldSize;
+        this.elevation = elevation;
+        this.biome = new Biome(biomeSelect);
+    }
+    
+    public int getElevation()
+    {
+        return this.elevation;
+    }
+
+    public Biome getBiome()
+    {
+        return this.biome;
     }
 }
