@@ -1,6 +1,5 @@
 
 import java.lang.String;
-import java.util.*;
 
 public class Biome {
 
@@ -33,7 +32,7 @@ public class Biome {
                 soundMod -= fixedMod;
                 coverMod += fixedMod;
                 break;
-            case 3:
+            case 3: // city
                 biomeName = "City";
                 soundMod += fixedMod;
                 tracksMod -= fixedMod;

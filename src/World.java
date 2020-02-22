@@ -20,7 +20,7 @@ class World
             {
                 try {
                     // make a new chunk with random biome, elevation, and pass through size
-                    this.chunks[i][j] = new Chunk(rnd.nextInt(3), rnd.nextInt(3), worldSize);
+                    this.chunks[i][j] = new Chunk(rnd.nextInt(4), rnd.nextInt(3), worldSize, i, j);
                 }
                 catch(Exception e) { System.out.print("\nexception:" + " i=" + i + " j=" + j);}
             }
@@ -35,12 +35,18 @@ class World
             {
                 try {
 
-                    System.out.print(this.chunks[i][j].getBiome().getBiomeName() + " ");
+                    System.out.print(this.chunks[i][j].getBiome().getBiomeName() + 
+                    this.chunks[i][j].getElevation() + " ");
                 }
                 catch (Exception e) { System.out.print("Exception"); }
             }
             System.out.println();
         }
+    }
+
+    public Chunk[][] getMatrix()
+    {
+        return chunks;
     }
 }
 
