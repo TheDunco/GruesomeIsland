@@ -11,7 +11,6 @@ public class Chunk
 
     public LinkedList<Item> items = new LinkedList<Item>();
 
-
     public LinkedList<Player> players = new LinkedList<Player>();
 
     public int iPos;
@@ -102,6 +101,19 @@ public class Chunk
         return this.chunkSounds.getSoundsString();
     }
 
+    public String whatDoISee() {
+
+    }
+
+    public Boolean inRange(Player player1, Player player2, int range) {
+        for(int i = 0; i <= range; i++) {
+            if(playerIn(player2.getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addPlayer(Player player)
     {
       this.players.add(player);
@@ -121,6 +133,16 @@ public class Chunk
             }
         }
         return searching;
+    }
+
+    public Boolean playerIn(String playerName) {
+        int i;
+        for(i = 0; i < players.size(); i++) {
+            if(players.get(i).getName() == playerName) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void userThrownSounds(String source, int intensity){

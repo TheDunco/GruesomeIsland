@@ -50,6 +50,54 @@ class World
     {
         return chunks;
     }
+
+    // move a player from one chunk into a new one
+    public void movePlayer(Player player, String direction) {
+        Chunk currentLoc = Player.getLocation();
+        int[] nextChunkLoc = currentLoc.getAdjacentChunk(direction);
+        currentLoc.removePlayer(player);
+        chunks[nextChunkLoc[0]][nextChunkLoc[1]].addPlayer(player);
+    }
+
+    // Will return a string with a cardinal direction if seen player is in range of looker player
+    public String sightLine(Player looker, Player seen, int range) {
+        // self chunk
+        Chunk currentLoc = Player.getLocation();
+        if(currentLoc.inRange(looker, seen, range)) {
+            return "self";
+        }
+
+        // north
+        int[] lookingChunkIndex = currentLoc.getAdjacentChunk("North");
+        Chunk lookingChunk = chunks[lookingChunkIndex[0]][lookingChunkIndex[1]];
+        if(lookingChunk.inRange(looker, seen, range)) {
+            return "North";
+        }
+
+        // east
+        lookingChunkIndex = currentLoc.getAdjacentChunk("East");
+        lookingChunk = chunks[lookingChunkIndex[0]][lookingChunkIndex[1]];
+        if(lookingChunk.inRange(looker, seen, range)) {
+            return "East";
+        }
+
+        // south
+        lookingChunkIndex = currentLoc.getAdjacentChunk("South");
+        lookingChunk = chunks[lookingChunkIndex[0]][lookingChunkIndex[1]];
+        if(lookingChunk.inRange(looker, seen, range)) {
+            return "South";
+        }
+
+        // west
+        lookingChunkIndex = currentLoc.getAdjacentChunk("West");
+        lookingChunk = chunks[lookingChunkIndex[0]][lookingChunkIndex[1]];
+        if(lookingChunk.inRange(looker, seen, range)) {
+            return "West";
+        }
+
+        return "none";
+    }
+
 }
 
 
