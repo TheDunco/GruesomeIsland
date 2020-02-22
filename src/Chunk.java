@@ -4,6 +4,9 @@ public class Chunk
     public Biome biome;
     public int elevation;
     public int worldSize;
+    public Sounds chunkSounds = new Sounds();
+
+    public LinkedList<Player> players = new LinkedList<Player>();
 
     public int iPos;
     public int jPos;
@@ -69,4 +72,40 @@ public class Chunk
                 return new int[]{-1, -1};
         }
     }
+    // string of the sounds from the various locations around the map
+    // for the user end
+    public String getSounds(){
+        String totalSounds = "";
+
+        totalSounds += chunkSounds.fromNorth();
+        totalSounds += chunkSounds.fromSouth();
+        totalSounds += chunkSounds.fromEast();
+        totalSounds += chunkSounds.fromWest();
+        totalSounds += chunkSounds.fromSelf();
+
+        return chunkSounds;
+    }
+
+    public void receiveSounds(Sounds next){
+
+    }
+
+    public void addPlayer(Player player)
+    {
+      this.players.add(player);
+    }
+
+    public void removePlayer(Player player)
+    {
+        this.players.remove(player);
+    }
+
+    public void userThrownSounds(String source, int intensity){
+        chunkSounds.addSound(intensity, source, "SELF");
+    }
+
+    public void receiveSoundThrows(){
+
+    }
+
 }
