@@ -5,7 +5,7 @@ public class MeleeWeapon extends Item {
     private static String[] weapons = {"ELVISH SWORD", "AXE", "MACHETE", "APPLE II", "CANE"};
 
     public MeleeWeapon(int id) {
-        super(weapons[id]);
+        super();
         this.type = id;
 
     }

@@ -1,21 +1,11 @@
 package src;
 
 public class Item {
-    private String name;
 
-    // constructor
-    public Item(String Name) {this.name = Name;}
+    public Item() {}
 
     public String getItem() {
-        return this.name;
-    }
-
-    public String throwObj() {
-        return " THROWN ";
-    }
-
-    public String drop() {
-        return " DROPPED ";
+        return "NULL";
     }
 
     public boolean canBeShot() {
@@ -34,4 +24,31 @@ public class Item {
         return true;
     }
 
+    public int getAmmo() {
+        return -1;
+    }
+    public int throwDamage() {
+        return 0;
+    }
+
+    public int throwProbability() {
+        return 0;
+    }
+
+    public void decrementAmmo() {
+        
+    }
+
+    public int[] damagePerShot() {
+        int[] array = new int[]{0,0};
+        return array;
+    }
+
+    public int accuracy() {
+        return 0;
+    }
+
+    public int range() {
+        return 0;
+    }
 }

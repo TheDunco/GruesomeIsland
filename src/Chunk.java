@@ -9,6 +9,8 @@ public class Chunk
     public int worldSize;
     public Sounds chunkSounds = new Sounds();
 
+    private static World world;
+
     public LinkedList<Item> items = new LinkedList<Item>();
 
     public LinkedList<Player> players = new LinkedList<Player>();
@@ -17,7 +19,7 @@ public class Chunk
     public int jPos;
 
     public Chunk(int biomeSelect, int elevation, int worldSize, int i, int j) {
-        // Create a worldSizexworldSize array of chunks
+        // Create a worldSize x worldSize array of chunks
         this.worldSize = worldSize;
         this.elevation = elevation;
         this.biome = new Biome(biomeSelect);
@@ -42,7 +44,7 @@ public class Chunk
 
         // String direction = direction;
         switch(direction) {
-            case ("North"):
+            case ("NORTH"):
                 if(this.iPos-- < 0) {
                     // out of bounds
                     return new int[]{-1};
@@ -51,7 +53,7 @@ public class Chunk
                 ret[1] = this.jPos;
                 return ret;
 
-            case ("East"):
+            case ("EAST"):
                 if(this.jPos++ >= worldSize) {
                     // out of bounds
                     return new int[]{-1};
@@ -59,7 +61,7 @@ public class Chunk
                 ret[0] = this.iPos;
                 ret[1] = this.jPos++;
                 return ret;
-            case ("South"):
+            case ("SOUTH"):
                 if(this.iPos++ >= worldSize) {
                     // out of bounds
                     return new int[]{-1};
@@ -68,7 +70,7 @@ public class Chunk
                 ret[1] = this.jPos;
                 return ret;
 
-            case ("West"):
+            case ("WEST"):
                 if(this.jPos-- < 0) {
                     // out of bounds
                     return new int[]{-1};
@@ -159,10 +161,6 @@ public class Chunk
 
     public void userThrownSounds(String source, int intensity){
         chunkSounds.addSound(intensity, source, "SELF");
-    }
-
-    public void receiveSoundThrows(){
-
     }
 
 }
