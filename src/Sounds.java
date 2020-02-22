@@ -55,9 +55,9 @@ public class Sounds {
     public String getSoundsString() {
         String ret = "";
         for (int i = 0; i < this.soundsList.size(); i++) {
-            ret += "You " + intensityTrans(soundsList.get(i).getIntensity()); // you (intensity) hear
-            ret += " a " + this.soundsList.get(i).getSource();                  // a (source)
-            ret += " from the " + this.soundsList.get(i).getDirection();      // from the (direction)
+            ret += "You hear a " + this.soundsList.get(i).getSource(); // you hear a (source)
+            ret += intensityTrans(soundsList.get(i).getIntensity());    // (intensity)
+            ret += " from the " + this.soundsList.get(i).getDirection(); // from the (direction)
 
             ret += "and\n";
         }
@@ -66,17 +66,20 @@ public class Sounds {
         } else {
             return ret;
         }
+
+        //NOTE: If you want to say something is in the same chunk, direction needs to be something like
+        // "right next to you", "very close by"...
     }
 
     public String intensityTrans(int intensity) {
         if (intensity <= 3) {
-            return "faintly hear";
+            return "faintly";
         } else if (intensity <= 5) {
-            return "clearly hear";
+            return "clearly";
         } else if (intensity <= 8) {
-            return "loudly hear";
+            return "loudly";
         } else if (intensity > 8) {
-            return "very loudly hear";
+            return "very loudly";
         }
         return "";
     }

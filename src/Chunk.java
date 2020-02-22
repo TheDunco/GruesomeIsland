@@ -96,6 +96,7 @@ public class Chunk
         return this.items;
     }
 
+    // can directly print the output of this
     public String getSounds() {
         return this.chunkSounds.getSoundsString();
     }

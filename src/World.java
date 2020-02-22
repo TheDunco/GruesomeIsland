@@ -45,27 +45,7 @@ class World
     }
     // string of the sounds from the various locations around the map
     // for the user end
-    public String getSounds(int matrixI, int matrixJ){
-            String totalSounds = "";
 
-            totalSounds += chunkSounds.fromNorth();
-            totalSounds += chunkSounds.fromSouth();
-            totalSounds += chunkSounds.fromEast();
-            totalSounds += chunkSounds.fromWest();
-            totalSounds += chunkSounds.fromSelf();
-
-            return chunkSounds;
-    }
-
-    public String getSounds(int matrixI, int matrixJ) {
-        String soundRet = "";
-        soundRet += chunks[matrixI][matrixJ].getSounds(matrixI, matrixJ);
-        int[] northChunkPos = chunks[matrixI][matrixJ].getAdjacentChunk("North");
-        soundRet += chunks[northChunkPos[0]][northChunkPos[1]].getSounds();
-
-
-        return soundRet;
-    }
     public Chunk[][] getMatrix()
     {
         return chunks;
