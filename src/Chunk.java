@@ -84,7 +84,8 @@ public class Chunk
     }
 
 
-    public void receiveSounds(Sound next){
+    // add sounds
+    public void receiveSounds(Sound next) {
         this.chunkSounds.addSound(next);
     }
 
@@ -109,6 +110,17 @@ public class Chunk
     public void removePlayer(Player player)
     {
         this.players.remove(player);
+    }
+
+    // Precondition: searching player MUST be in this chunk
+    public Player getPlayer(Player searching, String target) {
+        int i;
+        for(i = 0; i < players.size(); i++) {
+            if(players.get(i).getName() == target) {
+                return players.get(i);
+            }
+        }
+        return searching;
     }
 
     public void userThrownSounds(String source, int intensity){

@@ -4,12 +4,6 @@ import java.util.Scanner;
 
 public class Player {
     private String name;
-    // private Item[] inventory;
-    private int health;
-    private int kills;
-    private String commandLineInput;
-    private boolean waiting = false;
-    private boolean dodging = false;
 
     Player() {
         name = "username";

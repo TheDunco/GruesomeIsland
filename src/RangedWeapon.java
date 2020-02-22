@@ -5,6 +5,7 @@ public class RangedWeapon extends Item {
     private static String[] weapons = {"RIFLE", "MACHINE GUN", "SHOTGUN", "PISTOL", "LONGBOW"};
 
     RangedWeapon(int id) {
+        super();
         type = id;
     }
 
