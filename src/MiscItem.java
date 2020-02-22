@@ -1,4 +1,4 @@
-// Misc items have unique properties that don't align to MeleeWeapon or RangedWeapon specifications
+package src;// Misc items have unique properties that don't align to MeleeWeapon or RangedWeapon specifications
 
 public class MiscItem extends Item {
     private int id;
@@ -13,13 +13,6 @@ public class MiscItem extends Item {
             return true;
         }
         return false;
-    }
-
-    public boolean canBeThrown() {
-        if (id == 2 || id == 3) {
-            return false;
-        }
-        return true;
     }
 
     public boolean canBeThrown() {

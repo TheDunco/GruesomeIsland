@@ -1,3 +1,5 @@
+package src;
+
 public class RangedWeapon extends Item {
     private int type;
     private static String[] weapons = {"RIFLE", "MACHINE GUN", "SHOTGUN", "PISTOL", "LONGBOW"};

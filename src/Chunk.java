@@ -1,3 +1,6 @@
+package src;
+
+import java.util.LinkedList;
 
 public class Chunk 
 {
@@ -5,6 +8,9 @@ public class Chunk
     public int elevation;
     public int worldSize;
     public Sounds chunkSounds = new Sounds();
+
+    public LinkedList<Item> items = new LinkedList<Item>();
+
 
     public LinkedList<Player> players = new LinkedList<Player>();
 
@@ -39,7 +45,8 @@ public class Chunk
         switch(direction) {
             case ("North"):
                 if(this.iPos-- < 0) {
-                    // throw new IllegalStateException("You ran into the Northern border!");
+                    // out of bounds
+                    return new int[]{-1};
                 }
                 ret[0] = this.iPos--;
                 ret[1] = this.jPos;
@@ -47,14 +54,16 @@ public class Chunk
 
             case ("East"):
                 if(this.jPos++ >= worldSize) {
-                    // throw new IllegalStateException("You ran into the Eastern border!");
+                    // out of bounds
+                    return new int[]{-1};
                 }
                 ret[0] = this.iPos;
                 ret[1] = this.jPos++;
                 return ret;
             case ("South"):
                 if(this.iPos++ >= worldSize) {
-                    // throw new IllegalStateException("You ran into the Southern border!");
+                    // out of bounds
+                    return new int[]{-1};
                 }
                 ret[0] = this.iPos++;
                 ret[1] = this.jPos;
@@ -62,7 +71,8 @@ public class Chunk
 
             case ("West"):
                 if(this.jPos-- < 0) {
-                    // throw new IllegalStateException("You ran into the Western border!");
+                    // out of bounds
+                    return new int[]{-1};
                 }
                 ret[0] = this.iPos;
                 ret[1] = this.jPos--;
@@ -72,22 +82,22 @@ public class Chunk
                 return new int[]{-1, -1};
         }
     }
-    // string of the sounds from the various locations around the map
-    // for the user end
-    public String getSounds(){
-        String totalSounds = "";
 
-        totalSounds += chunkSounds.fromNorth();
-        totalSounds += chunkSounds.fromSouth();
-        totalSounds += chunkSounds.fromEast();
-        totalSounds += chunkSounds.fromWest();
-        totalSounds += chunkSounds.fromSelf();
 
-        return chunkSounds;
+    public void receiveSounds(Sound next){
+        this.chunkSounds.addSound(next);
     }
 
-    public void receiveSounds(Sounds next){
+    public void addItem(Item item) {
+        this.items.add(item);
+    }
 
+    public LinkedList<Item> getItems() {
+        return this.items;
+    }
+
+    public String getSounds() {
+        return this.chunkSounds.getSoundsString();
     }
 
     public void addPlayer(Player player)

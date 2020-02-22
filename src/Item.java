@@ -1,10 +1,13 @@
+package src;
+
 public class Item {
     private String name;
 
-    Item(String Name) {name = Name;}
+    // constructor
+    public Item(String Name) {this.name = Name;}
 
     public String getItem() {
-        return name;
+        return this.name;
     }
 
     public String throwObj() {
