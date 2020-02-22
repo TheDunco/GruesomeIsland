@@ -4,18 +4,33 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.*;
 
-public class World {
+public class World() {
 
-    // Create a 26x26 array of chunks
-    public static Matrix chunks = new Matrix(26, 26, Chunk());
+    World(int worldSize) {
+        this.worldSize = worldSize;
+    }
+
+    
     
     public class Chunk(Biome biome) {
-        public static Biome biome = biome;
+        public static Biome biome;
         public int elevation;
 
     }
     
-    public class Biome(int biomeSelection) {
+    // Create a 26x26 array of chunks
+    public static Chunk[][] chunks = new Chunk[worldSize][worldSize];
+    
+    private populateChunks() {
+        Random rand = new Random();
+        for (i = 0; i < worldSize; i++) {
+            for (j = 0; j < worldSize; j++ ) {
+                chunks[i][j] = new Chunk(rand.nextInt(4)); // 4 biomes so choose a random one
+            }
+        }
+    }
+
+    public abstract class Biome(int biomeSelection) {
         public int defaultMod = 5;
         public int soundMod = defaultMod;
         public int tracksMod = defaultMod;
@@ -27,20 +42,20 @@ public class World {
         // Biome switching
         public void biomeSelect() {
             switch(biomeSelection) {
-                case 1: // winter
+                case 0: // winter
                     biomeName = "Winter";
                     soundMod -= fixedMod;
                     tracksMod +=  fixedMod;
                     cover -= fixedMod;
-                case 2: // desert
+                case 1: // desert
                     biomeName = "Desert";
                     tracksMod +=  fixedMod;
                     cover -= fixedMod;
-                case 3: // forest
+                case 2: // forest
                     biomeName = "Forest";
                     soundMod -= fixedMod;
                     cover += fixedMod;
-                case 4:
+                case 3:
                     biomeName = "City";
                     soundMod += fixedMod;
                     tracksMod -=  fixedMod;
@@ -50,7 +65,6 @@ public class World {
                     soundMod -= fixedMod;
                     cover += fixedMod;
             }
-
         }
 
         public int getSoundMod() {
@@ -67,8 +81,6 @@ public class World {
         }
 
     }
-
-
 }
 
 
