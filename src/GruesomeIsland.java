@@ -24,7 +24,7 @@ public class GruesomeIsland {
                 || commandLineInput.equalsIgnoreCase("yeah") || commandLineInput.equalsIgnoreCase("sure")) {
             System.out.println("\nOk, what's your name?");
             System.out.print("---> ");
-            commandLineInput = scan.nextLine().toUpperCase();
+            commandLineInput = scan.nextLine();
             Player player = new Player(commandLineInput);
             int worldSize = 10;
 
