@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d86d3fb-4c94-4f18-945e-2d07ba73a0a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/GruesomeIsland-New.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/GruesomeIsland-New.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/GruesomeIsland.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/META-INF/GruesomeIsland-New.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/Biome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/Chunk.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/GruesomeIsland.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/MeleeWeapon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/RangedWeapon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/Sound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/Sounds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/src/World.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GruesomeIsland-New/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="101" column="25" lean-forward="true" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+            <state relative-caret-position="2619">
+              <caret line="102" column="54" lean-forward="true" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
               <folding>
                 <element signature="e#4558#4559#0" expanded="true" />
                 <element signature="e#4586#4587#0" expanded="true" />
@@ -218,13 +198,17 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="gruesomeisland" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582516079426" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582516991352" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -279,12 +263,12 @@
       <option name="presentableId" value="Default" />
       <updated>1582415854338</updated>
       <workItem from="1582415860518" duration="83000" />
-      <workItem from="1582509864244" duration="6326000" />
+      <workItem from="1582509864244" duration="6946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6409000" />
+    <option name="totallyTimeSpent" value="7029000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -300,7 +284,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32969603" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32969603" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32969603" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3998441" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -308,7 +292,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32969603" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32969603" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -498,8 +482,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="101" column="25" lean-forward="true" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+        <state relative-caret-position="2619">
+          <caret line="102" column="54" lean-forward="true" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
           <folding>
             <element signature="e#4558#4559#0" expanded="true" />
             <element signature="e#4586#4587#0" expanded="true" />
@@ -533,10 +517,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>GruesomeIsland:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -567,6 +553,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>13</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

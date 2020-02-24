@@ -82,7 +82,7 @@ public class Chunk
                 return new int[]{this.iPos, this.jPos-1, 0};
 
             default:
-                return new int[]{-1, -1};
+                return new int[]{-1, -1, -1};
         }
     }
 

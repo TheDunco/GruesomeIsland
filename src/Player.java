@@ -67,11 +67,10 @@ public class Player {
                 }
                 return "I do not understand what direction you wish to run";
             case "WALK":
-
             case "GOTO":
             case "GO":
                 if (cardinalDirections.contains(tokens[1])) {
-                    return move(tokens[0], "walk");
+                    return move(tokens[1], "walk");
                 }
                 return "I do not understand what direction you wish to walk";
 //            case "CRAWL":
