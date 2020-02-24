@@ -56,7 +56,12 @@ public class GruesomeIsland {
                     break;
                 }
 
+                try {
                 System.out.println(player.commandLine(commandLineInput));
+                }
+                catch(java.lang.ArrayIndexOutOfBoundsException Exc) {
+                    System.out.println("Please enter something sensible");
+                }
 
                 // world.showMatrix();
             }
