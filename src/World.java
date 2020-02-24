@@ -42,8 +42,7 @@ class World
             {
                 try {
 
-                    System.out.print(this.chunks[i][j].getBiome().getBiomeName() + 
-                    this.chunks[i][j].getElevation() + " ");
+                    System.out.print(this.chunks[i][j].getBiome().getBiomeName() + this.chunks[i][j].getElevation() + " ");
                 }
                 catch (Exception e) { System.out.print("Exception"); }
             }
@@ -58,6 +57,8 @@ class World
         return chunks;
     }
 
+    public int getWorldSize() { return this.worldSize; }
+
     public static World getInstance(int worldSize) {
         if (world_instance == null)
             world_instance = new World(worldSize);
@@ -66,16 +67,16 @@ class World
     }
 
     // move a player from one chunk into a new one
-    public void movePlayer(Player player, String direction) {
+    public boolean movePlayer(Player player, String direction) {
         Chunk currentLoc = player.getLocation();
         int[] nextChunkLoc = currentLoc.getAdjacentChunk(direction);
 
-        if(nextChunkLoc[0] == -1) {
-            System.out.println("That's outta bounds brother");
-            return;
+        if(nextChunkLoc[2] == -1) {
+            return true;
         }
         currentLoc.removePlayer(player);
         chunks[nextChunkLoc[0]][nextChunkLoc[1]].addPlayer(player);
+        return false;
     }
 
     // Will return a string with a cardinal direction if seen player is in range of looker player
@@ -83,38 +84,38 @@ class World
         // self chunk
         Chunk currentLoc = looker.getLocation();
         if(currentLoc.inRange(looker, seen, range)) {
-            return "self";
+            return "SELF";
         }
 
         // north
         int[] lookingChunkIndex = currentLoc.getAdjacentChunk("North");
         Chunk lookingChunk = chunks[lookingChunkIndex[0]][lookingChunkIndex[1]];
         if(lookingChunk.inRange(looker, seen, range)) {
-            return "North";
+            return "NORTH";
         }
 
         // east
         lookingChunkIndex = currentLoc.getAdjacentChunk("East");
         lookingChunk = chunks[lookingChunkIndex[0]][lookingChunkIndex[1]];
         if(lookingChunk.inRange(looker, seen, range)) {
-            return "East";
+            return "EAST";
         }
 
         // south
         lookingChunkIndex = currentLoc.getAdjacentChunk("South");
         lookingChunk = chunks[lookingChunkIndex[0]][lookingChunkIndex[1]];
         if(lookingChunk.inRange(looker, seen, range)) {
-            return "South";
+            return "SOUTH";
         }
 
         // west
         lookingChunkIndex = currentLoc.getAdjacentChunk("West");
         lookingChunk = chunks[lookingChunkIndex[0]][lookingChunkIndex[1]];
         if(lookingChunk.inRange(looker, seen, range)) {
-            return "West";
+            return "WEST";
         }
 
-        return "none";
+        return "NONE";
     }
 
     public String seenBiomes(Chunk currentLoc) {

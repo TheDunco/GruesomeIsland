@@ -9,8 +9,6 @@ public class Chunk
     public int worldSize;
     public Sounds chunkSounds = new Sounds();
 
-    private static World world;
-
     public LinkedList<Item> items = new LinkedList<Item>();
 
     public LinkedList<Player> players = new LinkedList<Player>();
@@ -38,46 +36,50 @@ public class Chunk
         return this.biome;
     }
 
-    public int[] getAdjacentChunk(String direction)// throws IllegalStateException
+    /*
+    Returns an int[] containing the i,j matrix coordinates of the chunk adjacent to this one in the direction specified
+    The 3rd element (index 2) of the array will be a -1 if player tried to move out of bounds
+     */
+    public int[] getAdjacentChunk(String direction)
     {
-        int[] ret = new int[2];
-
         // String direction = direction;
         switch(direction) {
-            case ("NORTH"):
-                if(this.iPos-- < 0) {
-                    // out of bounds
-                    return new int[]{-1};
-                }
-                ret[0] = this.iPos--;
-                ret[1] = this.jPos;
-                return ret;
-
-            case ("EAST"):
-                if(this.jPos++ >= worldSize) {
-                    // out of bounds
-                    return new int[]{-1};
-                }
-                ret[0] = this.iPos;
-                ret[1] = this.jPos++;
-                return ret;
+            // because of matrix indexing, north and south are technically flipped
+            case ("DOWN"):
             case ("SOUTH"):
-                if(this.iPos++ >= worldSize) {
-                    // out of bounds
-                    return new int[]{-1};
-                }
-                ret[0] = this.iPos++;
-                ret[1] = this.jPos;
-                return ret;
+                if((this.iPos - 1) < 0) {
 
-            case ("WEST"):
-                if(this.jPos-- < 0) {
                     // out of bounds
-                    return new int[]{-1};
+                    return new int[]{iPos, jPos, -1};
                 }
-                ret[0] = this.iPos;
-                ret[1] = this.jPos--;
-                return ret;
+                return new int[]{this.iPos-1, this.jPos, 0};
+
+            case ("LEFT"):
+            case ("EAST"):
+                if((this.jPos + 1) >= worldSize) {
+
+                    // out of bounds
+                    return new int[]{iPos, jPos, -1};
+                }
+                return new int[]{this.iPos, this.jPos+1, 0};
+
+            case ("UP"):
+            case ("NORTH"):
+                if((this.iPos + 1) >= worldSize) {
+
+                    // out of bounds
+                    return new int[]{iPos, jPos, -1};
+                }
+                return new int[]{this.iPos+1, this.jPos, 0};
+
+            case ("RIGHT"):
+            case ("WEST"):
+                if((this.jPos - 1) < 0) {
+
+                    // out of bounds
+                    return new int[]{iPos, jPos, -1};
+                }
+                return new int[]{this.iPos, this.jPos-1, 0};
 
             default:
                 return new int[]{-1, -1};
@@ -131,6 +133,7 @@ public class Chunk
     public void addPlayer(Player player)
     {
       this.players.add(player);
+      player.setLocation(this);
     }
 
     public void removePlayer(Player player)
