@@ -56,10 +56,10 @@ public class Player {
             case "SOUTH":
                 return move("SOUTH", "walk");
             case "LEFT":
-            case "EAST":
+            case "WEST":
                 return move("EAST", "walk");
             case "RIGHT":
-            case "WEST":
+            case "EAST":
                 return move("WEST", "walk");
             case "RUN":
                 if (cardinalDirections.contains(tokens[1])) {
@@ -300,7 +300,9 @@ public class Player {
         }
 
         if (!outOfBounds) {
-            return ("You " + speed + " " + direction + ". As you stop you see ");// + World.getInstance(10).seenBiomes(getLocation()));
+//            return ("You " + speed + " " + direction + ". As you stop you see ");// + World.getInstance(10).seenBiomes(getLocation()));
+            return ("You " + speed + " " + direction + ". As you stop you see "+ World.getInstance(10).seenBiomes(getLocation()));
+
         }
         else {
             return ("You " + speed + " " + direction + " and bump into the barrier.");

@@ -119,7 +119,7 @@ class World
     }
 
     public String seenBiomes(Chunk currentLoc) {
-        String ret = "You are currently in a " + currentLoc.getBiomeName();
+        String ret = "you are currently in a " + currentLoc.getBiomeName() + "\n";
 
         // switch to looking north
         int[] lookingLocIndex = currentLoc.getAdjacentChunk("NORTH");

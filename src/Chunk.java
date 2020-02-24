@@ -44,9 +44,9 @@ public class Chunk
     {
         // String direction = direction;
         switch(direction) {
-            // because of matrix indexing, north and south are technically flipped
-            case ("DOWN"):
-            case ("SOUTH"):
+            // Keep in mind that b/c of matrix indexing, 0,0 is at top left (north west)
+            case ("UP"):
+            case ("NORTH"):
                 if((this.iPos - 1) < 0) {
 
                     // out of bounds
@@ -54,7 +54,7 @@ public class Chunk
                 }
                 return new int[]{this.iPos-1, this.jPos, 0};
 
-            case ("LEFT"):
+            case ("RIGHT"):
             case ("EAST"):
                 if((this.jPos + 1) >= worldSize) {
 
@@ -63,8 +63,8 @@ public class Chunk
                 }
                 return new int[]{this.iPos, this.jPos+1, 0};
 
-            case ("UP"):
-            case ("NORTH"):
+            case ("DOWN"):
+            case ("SOUTH"):
                 if((this.iPos + 1) >= worldSize) {
 
                     // out of bounds
@@ -72,7 +72,7 @@ public class Chunk
                 }
                 return new int[]{this.iPos+1, this.jPos, 0};
 
-            case ("RIGHT"):
+            case ("LEFT"):
             case ("WEST"):
                 if((this.jPos - 1) < 0) {
 

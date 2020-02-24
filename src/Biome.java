@@ -18,7 +18,7 @@ public class Biome {
         // Biome switching
         switch(biomeSelection) {
             case 0: // winter
-                biomeName = "Winter";
+                biomeName = "Tundra";
                 soundMod -= fixedMod;
                 tracksMod += fixedMod;
                 coverMod -= fixedMod;
